@@ -102,38 +102,56 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 flex items-center justify-center p-4 sm:p-6 lg:p-8">
-      <div className="w-full max-w-2xl">
-        {/* Main Card */}
-        <div className="bg-white rounded-3xl shadow-2xl overflow-hidden animate-fade-in">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-indigo-600 to-purple-600 px-6 sm:px-8 py-8 sm:py-10 text-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-4 animate-float">
-              <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900">
+      {/* Professional Header */}
+      <div className="bg-white/5 backdrop-blur-sm border-b border-white/10">
+        <div className="max-w-6xl mx-auto px-4 py-6">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="text-center sm:text-left">
+              <h1 className="text-xl sm:text-2xl font-bold text-white mb-1">
+                Sri Laxmi Narasimha Filling Station
+              </h1>
+              <p className="text-blue-200 text-sm font-medium">
+                Sirikonda • Transaction Management System
+              </p>
             </div>
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">
-              CSV Transaction Processor
-            </h1>
-            <p className="text-indigo-100 text-sm sm:text-base max-w-md mx-auto">
-              Extract PhonePe, Swipe, and Cash transactions with grand totals
-            </p>
+            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+              <svg className="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span className="text-white text-sm font-medium">CSV Processor</span>
+            </div>
           </div>
+        </div>
+      </div>
 
-          <div className="p-6 sm:p-8 lg:p-10">
+      {/* Main Content Area */}
+      <div className="max-w-4xl mx-auto px-4 py-8 sm:py-12">
+
+        {/* Upload Card */}
+        <div className="bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl overflow-hidden animate-fade-in">
+          <div className="p-6 sm:p-8">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-indigo-500/20 backdrop-blur-sm rounded-xl mb-4">
+                <svg className="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold text-white mb-2">Upload Transaction File</h3>
+              <p className="text-white/60 text-sm">Extract PhonePe, Swipe, and Cash transactions with totals</p>
+            </div>
             {/* Upload Area */}
             <div
               onDragOver={handleDragOver}
               onDragLeave={handleDragLeave}
               onDrop={handleDrop}
               className={`
-                relative border-2 border-dashed rounded-2xl p-8 sm:p-12 transition-all duration-300
+                relative border-2 border-dashed rounded-xl p-8 transition-all duration-300 mb-6 group cursor-pointer
                 ${isDragging 
-                  ? 'border-indigo-500 bg-indigo-50 scale-105' 
+                  ? 'border-indigo-400/70 bg-indigo-500/20 scale-[1.02]' 
                   : selectedFile 
-                    ? 'border-green-400 bg-green-50' 
-                    : 'border-gray-300 bg-gray-50 hover:border-indigo-400 hover:bg-indigo-50/50'
+                    ? 'border-emerald-400/70 bg-emerald-500/20' 
+                    : 'border-white/30 bg-white/5 hover:border-indigo-400/50 hover:bg-white/10'
                 }
               `}
             >
@@ -148,42 +166,42 @@ function App() {
               {!selectedFile ? (
                 <label htmlFor="file-input" className="cursor-pointer block">
                   <div className="flex flex-col items-center text-center">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-4 transform transition-transform hover:scale-110">
-                      <svg className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-4 transform transition-transform hover:scale-110">
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                       </svg>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-gray-700 mb-2">
+                    <h3 className="text-lg font-semibold text-white mb-2">
                       Drop your CSV file here
                     </h3>
-                    <p className="text-sm text-gray-500 mb-1">
-                      or <span className="text-indigo-600 font-medium">click to browse</span>
+                    <p className="text-sm text-white/70 mb-1">
+                      or <span className="text-white font-medium underline">click to browse</span>
                     </p>
-                    <p className="text-xs text-gray-400 mt-2">
+                    <p className="text-xs text-white/50 mt-2">
                       CSV files only • Max 16MB
                     </p>
                   </div>
                 </label>
               ) : (
                 <div className="flex items-center gap-4 animate-fade-in">
-                  <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 bg-green-100 rounded-xl flex items-center justify-center">
-                    <svg className="w-6 h-6 sm:w-7 sm:h-7 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="flex-shrink-0 w-12 h-12 bg-green-500/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                    <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm sm:text-base font-semibold text-gray-900 truncate">
+                    <p className="text-sm font-semibold text-white truncate">
                       {selectedFile.name}
                     </p>
-                    <p className="text-xs sm:text-sm text-gray-500">
+                    <p className="text-xs text-white/70">
                       {formatFileSize(selectedFile.size)}
                     </p>
                   </div>
                   <button
                     onClick={handleReset}
-                    className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-red-100 hover:bg-red-200 rounded-lg flex items-center justify-center transition-all duration-200 hover:rotate-90"
+                    className="flex-shrink-0 w-8 h-8 bg-red-500/20 hover:bg-red-500/30 backdrop-blur-sm rounded-lg flex items-center justify-center transition-all duration-200 hover:rotate-90"
                   >
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
@@ -196,7 +214,7 @@ function App() {
               <button
                 onClick={handleUpload}
                 disabled={processing}
-                className="w-full mt-6 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-3 text-base sm:text-lg animate-fade-in"
+                className="w-full bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-xl border border-white/30 hover:border-white/50 transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-3 animate-fade-in"
               >
                 {processing ? (
                   <>
@@ -219,105 +237,143 @@ function App() {
 
             {/* Success Message */}
             {message && (
-              <div className="mt-6 bg-green-50 border-l-4 border-green-500 p-4 rounded-lg animate-slide-in">
-                <div className="flex items-center gap-3">
-                  <svg className="w-6 h-6 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <p className="text-sm sm:text-base text-green-800 font-medium">{message}</p>
+              <div className="mt-6 p-4 bg-emerald-500/10 backdrop-blur-sm border border-emerald-400/30 rounded-xl animate-slide-in">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-emerald-500/20 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-medium text-emerald-300 mb-1">Success</p>
+                    <p className="text-sm text-white/80">{message}</p>
+                  </div>
                 </div>
               </div>
             )}
 
             {/* Error Message */}
             {error && (
-              <div className="mt-6 bg-red-50 border-l-4 border-red-500 p-4 rounded-lg animate-slide-in">
-                <div className="flex items-center gap-3">
-                  <svg className="w-6 h-6 text-red-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <p className="text-sm sm:text-base text-red-800 font-medium">{error}</p>
+              <div className="mt-6 p-4 bg-red-500/10 backdrop-blur-sm border border-red-400/30 rounded-xl animate-slide-in">
+                <div className="flex items-start gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 bg-red-500/20 rounded-full flex items-center justify-center">
+                    <svg className="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </div>
+                  <div className="flex-1">
+                    <p className="text-sm font-medium text-red-300 mb-1">Error</p>
+                    <p className="text-sm text-white/80">{error}</p>
+                  </div>
                 </div>
               </div>
             )}
 
             {/* Download Section */}
             {downloadFilename && (
-              <div className="mt-6 space-y-3 animate-fade-in">
-                <button
-                  onClick={handleDownload}
-                  className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-3 text-base sm:text-lg"
-                >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                  </svg>
-                  <span>Download Processed File</span>
-                </button>
-                <button
-                  onClick={handleReset}
-                  className="w-full bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-3 px-6 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 text-sm sm:text-base"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                  </svg>
-                  <span>Process Another File</span>
-                </button>
+              <div className="mt-8 space-y-4 animate-fade-in">
+                <div className="p-4 bg-emerald-500/5 backdrop-blur-sm border border-emerald-400/20 rounded-xl">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-8 h-8 bg-emerald-500/20 rounded-full flex items-center justify-center">
+                      <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-medium text-emerald-300">File Processed Successfully</h4>
+                      <p className="text-xs text-white/60">Your transaction data is ready for download</p>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <button
+                      onClick={handleDownload}
+                      className="w-full bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white font-semibold py-4 px-6 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-3"
+                    >
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      </svg>
+                      <span>Download Processed File</span>
+                    </button>
+                    
+                    <button
+                      onClick={handleReset}
+                      className="w-full bg-white/5 hover:bg-white/10 text-white/70 hover:text-white font-medium py-3 px-6 rounded-xl border border-white/20 hover:border-white/30 transition-all duration-200 flex items-center justify-center gap-2"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                      </svg>
+                      <span>Process Another File</span>
+                    </button>
+                  </div>
+                </div>
               </div>
             )}
-
-            {/* Features Grid */}
-            <div className="mt-10 pt-8 border-t border-gray-200">
-              <div className="grid grid-cols-3 gap-4 sm:gap-6">
-                <div className="text-center group cursor-default">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-3 transform group-hover:scale-110 transition-transform duration-200">
-                    <span className="text-xl sm:text-2xl">📱</span>
-                  </div>
-                  <p className="text-xs sm:text-sm font-medium text-gray-700">PhonePe</p>
-                  <p className="text-xs text-gray-500 mt-1 hidden sm:block">Digital Payments</p>
+          </div>
+          
+          {/* Information Section */}
+          <div className="mt-8 pt-6 border-t border-white/10">
+            <h4 className="text-sm font-medium text-white/80 mb-4 text-center">Supported Transaction Types</h4>
+            <div className="grid grid-cols-3 gap-4 mb-6">
+              <div className="text-center p-3 bg-white/5 rounded-lg">
+                <div className="w-8 h-8 mx-auto bg-blue-500/20 rounded-lg flex items-center justify-center mb-2">
+                  <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  </svg>
                 </div>
-                <div className="text-center group cursor-default">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-3 transform group-hover:scale-110 transition-transform duration-200">
-                    <span className="text-xl sm:text-2xl">💳</span>
-                  </div>
-                  <p className="text-xs sm:text-sm font-medium text-gray-700">Swipe</p>
-                  <p className="text-xs text-gray-500 mt-1 hidden sm:block">Card Transactions</p>
+                <p className="text-xs font-medium text-white">PhonePe</p>
+                <p className="text-xs text-white/50">Digital</p>
+              </div>
+              <div className="text-center p-3 bg-white/5 rounded-lg">
+                <div className="w-8 h-8 mx-auto bg-purple-500/20 rounded-lg flex items-center justify-center mb-2">
+                  <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                  </svg>
                 </div>
-                <div className="text-center group cursor-default">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 mx-auto bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-3 transform group-hover:scale-110 transition-transform duration-200">
-                    <span className="text-xl sm:text-2xl">💰</span>
-                  </div>
-                  <p className="text-xs sm:text-sm font-medium text-gray-700">Cash</p>
-                  <p className="text-xs text-gray-500 mt-1 hidden sm:block">Cash Payments</p>
+                <p className="text-xs font-medium text-white">Swipe</p>
+                <p className="text-xs text-white/50">Card</p>
+              </div>
+              <div className="text-center p-3 bg-white/5 rounded-lg">
+                <div className="w-8 h-8 mx-auto bg-emerald-500/20 rounded-lg flex items-center justify-center mb-2">
+                  <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v2a2 2 0 002 2z" />
+                  </svg>
                 </div>
+                <p className="text-xs font-medium text-white">Cash</p>
+                <p className="text-xs text-white/50">Physical</p>
               </div>
             </div>
-
-            {/* Footer */}
-            <div className="mt-8 pt-6 border-t border-gray-200 text-center">
-              <p className="text-xs sm:text-sm text-gray-500 flex items-center justify-center gap-2 flex-wrap">
-                <span className="flex items-center gap-1">
-                  <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  Secure
-                </span>
-                <span className="text-gray-300">•</span>
-                <span className="flex items-center gap-1">
-                  <svg className="w-4 h-4 text-blue-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clipRule="evenodd" />
-                  </svg>
-                  Fast
-                </span>
-                <span className="text-gray-300">•</span>
-                <span className="flex items-center gap-1">
-                  <svg className="w-4 h-4 text-purple-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  Reliable
-                </span>
-              </p>
-            </div>
           </div>
+        </div>
+        
+        {/* Minimalistic Footer */}
+        <div className="mt-16 pt-6 border-t border-white/10 text-center">
+          <div className="flex items-center justify-center gap-3 mb-4">
+            <div className="w-6 h-6 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+              <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <p className="text-white/80 text-sm font-medium">
+              Crafted by EasyLearnova Solutions
+            </p>
+          </div>
+          
+          <p className="text-white/60 text-sm mb-6">
+            Want automated solutions for your business? Reach out to us
+          </p>
+          
+          <a 
+            href="https://my-portfolio-olive-psi-69.vercel.app/#bottom" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium px-5 py-2.5 rounded-lg border border-white/20 hover:border-white/30 transition-all duration-200"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+            <span>Reach Out</span>
+          </a>
         </div>
       </div>
     </div>
