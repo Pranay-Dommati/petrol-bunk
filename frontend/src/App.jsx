@@ -214,7 +214,7 @@ function App() {
               <button
                 onClick={handleUpload}
                 disabled={processing}
-                className="w-full bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-semibold py-3 px-6 rounded-xl border border-white/30 hover:border-white/50 transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-3 animate-fade-in"
+                className="w-full bg-white/15 hover:bg-white/25 backdrop-blur-sm text-white font-semibold py-3.5 px-6 rounded-xl border border-white/30 hover:border-white/50 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-3 animate-fade-in"
               >
                 {processing ? (
                   <>
@@ -235,22 +235,7 @@ function App() {
               </button>
             )}
 
-            {/* Success Message */}
-            {message && (
-              <div className="mt-6 p-4 bg-emerald-500/10 backdrop-blur-sm border border-emerald-400/30 rounded-xl animate-slide-in">
-                <div className="flex items-start gap-3">
-                  <div className="flex-shrink-0 w-8 h-8 bg-emerald-500/20 rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm font-medium text-emerald-300 mb-1">Success</p>
-                    <p className="text-sm text-white/80">{message}</p>
-                  </div>
-                </div>
-              </div>
-            )}
+
 
             {/* Error Message */}
             {error && (
@@ -314,7 +299,7 @@ function App() {
           {/* Information Section */}
           <div className="mt-8 pt-6 border-t border-white/10">
             <h4 className="text-sm font-medium text-white/80 mb-4 text-center">Supported Transaction Types</h4>
-            <div className="grid grid-cols-3 gap-4 mb-6">
+            <div className="grid grid-cols-3 gap-4 mb-6 px-2">
               <div className="text-center p-3 bg-white/5 rounded-lg">
                 <div className="w-8 h-8 mx-auto bg-blue-500/20 rounded-lg flex items-center justify-center mb-2">
                   <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
