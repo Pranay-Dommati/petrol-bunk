@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import './App.css'
 
+// Configure API URL based on environment
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+
 function App() {
   const [selectedFile, setSelectedFile] = useState(null)
   const [processing, setProcessing] = useState(false)
@@ -35,7 +38,7 @@ function App() {
     formData.append('file', selectedFile)
 
     try {
-      const response = await fetch('http://localhost:5000/api/upload', {
+      const response = await fetch(`${API_URL}/api/upload`, {
         method: 'POST',
         body: formData,
       })
@@ -57,7 +60,7 @@ function App() {
 
   const handleDownload = () => {
     if (downloadFilename) {
-      window.location.href = `http://localhost:5000/api/download/${downloadFilename}`
+      window.location.href = `${API_URL}/api/download/${downloadFilename}`
     }
   }
 

@@ -1,9 +1,31 @@
 services:
+  # Backend API Service
   - type: web
-    name: phonepe-swipe-processor
+    name: phonepe-swipe-processor-api
     env: python
+    region: oregon
+    plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
+      - key: PORT
+        value: 10000
+    healthCheckPath: /api/health
+
+  # Frontend Static Site
+  - type: web
+    name: phonepe-swipe-processor-frontend
+    env: static
+    region: oregon
+    plan: free
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/dist
+    envVars:
+      - key: VITE_API_URL
+        sync: false
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

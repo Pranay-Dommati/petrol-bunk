@@ -93,6 +93,95 @@ The processor will:
 
 ## Technologies Used
 
-- **Backend**: Flask, Flask-CORS, Pandas
-- **Frontend**: React, Vite
-- **Styling**: Custom CSS with gradients
+- **Backend**: Flask, Flask-CORS, Pandas, Gunicorn
+- **Frontend**: React, Vite, Tailwind CSS
+- **Deployment**: Render (Backend + Frontend)
+
+## 🚀 Deployment
+
+This application is configured for easy deployment to Render with both frontend and backend.
+
+### Quick Deploy to Render
+
+1. **Push code to GitHub**:
+   ```bash
+   git add .
+   git commit -m "Ready for deployment"
+   git push origin main
+   ```
+
+2. **Deploy on Render**:
+   - Go to [Render Dashboard](https://dashboard.render.com/)
+   - Click **"New +"** → **"Blueprint"**
+   - Connect your GitHub repository
+   - Render will auto-detect `render.yaml` and deploy both services
+
+3. **Configure Frontend**:
+   - After deployment, go to frontend service
+   - Add environment variable: `VITE_API_URL` = `<your-backend-url>`
+   - Frontend will auto-redeploy
+
+📖 **For detailed deployment instructions**, see [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)
+
+### Deployed URLs
+
+- **Frontend**: `https://phonepe-swipe-processor-frontend.onrender.com`
+- **Backend API**: `https://phonepe-swipe-processor-api.onrender.com`
+
+## 📁 Environment Variables
+
+### Frontend
+Create a `.env` file in the `frontend/` directory:
+```env
+VITE_API_URL=http://localhost:5000  # For local development
+# For production, set in Render: https://your-backend.onrender.com
+```
+
+### Backend
+No environment variables needed for local development. For production:
+- `PYTHON_VERSION=3.11.9` (auto-configured in render.yaml)
+- `PORT` (auto-provided by Render)
+
+## 🔧 Development
+
+### Prerequisites
+- Python 3.11.9
+- Node.js 18+ and npm
+- Git
+
+### Local Setup
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Pranay-Dommati/petrol-bunk.git
+   cd petrol-bunk
+   ```
+
+2. **Backend Setup**:
+   ```bash
+   pip install -r requirements.txt
+   python app.py
+   ```
+   Runs on `http://localhost:5000`
+
+3. **Frontend Setup**:
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+   Runs on `http://localhost:5173`
+
+## 📝 Project Files
+
+- `app.py` - Flask backend API server
+- `main.py` - CSV processing logic
+- `render.yaml` - Render deployment configuration
+- `requirements.txt` - Python dependencies
+- `runtime.txt` - Python version specification
+- `DEPLOYMENT_GUIDE.md` - Complete deployment instructions
+- `frontend/` - React frontend application
+  - `src/App.jsx` - Main UI component
+  - `src/App.css` - Styling
+  - `package.json` - Node dependencies
+
