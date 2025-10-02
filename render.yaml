@@ -10,16 +10,12 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
-      - key: PORT
-        value: 10000
     healthCheckPath: /api/health
 
   # Frontend Static Site
   - type: web
     name: phonepe-swipe-processor-frontend
     env: static
-    region: oregon
-    plan: free
     buildCommand: cd frontend && npm install && npm run build
     staticPublishPath: ./frontend/dist
     envVars:
